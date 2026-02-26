@@ -1,0 +1,149 @@
+---
+title: My current Arch Linux Setup
+description: Hyprland, two shells, and one tool to rule them all
+tags:
+  - Personal
+  - Linux
+  - Arch
+pubDate: 2026-02-26
+---
+
+## My Arch Setup ヾ(≧▽≦*)o
+
+hyprland · quickshell · colorful & cozy · btw
+
+---
+
+Yes, I use Arch. Yes, I will mention it. That's just the terms and conditions of the rice. (¬‿¬)
+
+This is my current desktop setup — not a tutorial, not a flex, just me documenting what I've built
+before I inevitably break it and have to redo everything from scratch. Again.
+
+<div style="text-align:center; color:rgba(255,255,255,0.2); margin:1.5rem 0; font-size:1.2rem; letter-spacing:0.5rem;">· · · ✦ · · ·</div>
+
+## ( ´ ▽ ` ) The Screenshot
+
+import arch1 from '../../assets/images/arch_1.png'
+import arch2 from '../../assets/images/arch_2.png'
+import arch3 from '../../assets/images/arch_3.png'
+import { Image } from 'astro:assets'
+
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:0.75rem; margin:1.5rem 0;">
+  <Image src={arch1} alt="arch setup 1" style="border-radius:8px; width:100%;" />
+  <Image src={arch2} alt="arch setup 2" style="border-radius:8px; width:100%;" />
+  <Image src={arch3} alt="arch setup 3" style="border-radius:8px; width:100%; grid-column: span 2;" />
+</div>
+
+> *colorful, cozy, and somehow functional* (｡•̀ᴗ-)✧
+
+<div style="text-align:center; color:rgba(255,255,255,0.2); margin:1.5rem 0; font-size:1.2rem; letter-spacing:0.5rem;">· · · ✦ · · ·</div>
+
+## ヽ(^o^) The Stack
+
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.5rem 0;">
+
+  <div style="border:1px solid #333; border-radius:12px; padding:1rem 1.2rem; line-height:1.7;">
+    **🪟 Window Manager**
+    Hyprland — smooth animations, tiling that actually makes sense, and it looks incredible. Worth every config hour.
+  </div>
+
+  <div style="border:1px solid #333; border-radius:12px; padding:1rem 1.2rem; line-height:1.7;">
+    **🐚 Shell Framework**
+    Quickshell — the backbone of both my desktop shells. Qt/QML based and insanely flexible.
+  </div>
+
+  <div style="border:1px solid #333; border-radius:12px; padding:1rem 1.2rem; line-height:1.7;">
+    **🎨 Shell #1 — end4 dots**
+    The classic. Material You theming, AI sidebar, dynamic colors from wallpaper. Feature-packed to the max.
+  </div>
+
+  <div style="border:1px solid #333; border-radius:12px; padding:1rem 1.2rem; line-height:1.7;">
+    **✨ Shell #2 — Caelestia**
+    Soft pastels, rounded corners, cohesive design. Feels like Material Design grew up and moved to Linux.
+  </div>
+
+  <div style="border:1px solid #333; border-radius:12px; padding:1rem 1.2rem; line-height:1.7;">
+    **🌙 Shell #3 — Noctalia**
+    Minimal, warm lavender aesthetic, built-in notification center and control panel. Gets out of your way.
+  </div>
+
+  <div style="border:1px solid #333; border-radius:12px; padding:1rem 1.2rem; line-height:1.7;">
+    **🔀 qswitch**
+    The thing that makes running all three sane. Switch shells with one command. More on this below. (＾▽＾)
+  </div>
+
+</div>
+
+<div style="text-align:center; color:rgba(255,255,255,0.2); margin:1.5rem 0; font-size:1.2rem; letter-spacing:0.5rem;">· · · ✦ · · ·</div>
+
+## (*・ω・)ノ The Interesting Part — Three Shells, One Setup
+
+Okay so here's the thing most people don't do — I run *three different Quickshell configs* on a single
+Hyprland install and switch between them depending on my mood. (￣▽￣)ノ
+
+**end4's dots** when I want something feature-rich and alive. **Caelestia** when I want something that looks like a cozy pastel dream. **Noctalia** when I want it clean and out of my face.
+
+The tool that makes this actually work is **qswitch** — a tiny Go utility that handles switching between
+Quickshell configs, manages keybind conflicts between shells, and even has a little panel for visual switching.
+
+```bash
+# switch to caelestia
+qswitch apply caelestia
+
+# or just cycle through them
+qswitch
+
+# see what you're on
+qswitch current
+```
+
+It reads from a `~/.config/qswitch/config.json` where you list your flavours and their keybind files.
+Each shell can have its own keybinds without stepping on each other. It's honestly kind of genius for how simple it is. (｡•̀ᴗ-)✧
+
+<div style="text-align:center; color:rgba(255,255,255,0.2); margin:1.5rem 0; font-size:1.2rem; letter-spacing:0.5rem;">· · · ✦ · · ·</div>
+
+## (´。• ᵕ •。`) The Links
+
+<div style="display:grid; grid-template-columns:1fr 1fr; gap:1rem; margin:1.5rem 0;">
+
+  <div style="border:1px solid #333; border-radius:12px; padding:1rem 1.2rem; line-height:1.8;">
+    **end4's dotfiles**
+    Usability-first Hyprland rice with Quickshell, AI integration and dynamic Material theming.
+    [→ github.com/end-4/dots-hyprland](https://github.com/end-4/dots-hyprland)
+  </div>
+
+  <div style="border:1px solid #333; border-radius:12px; padding:1rem 1.2rem; line-height:1.8;">
+    **Caelestia**
+    A very segsy rice. Quickshell-based shell with soft pastels and a unified design system.
+    [→ github.com/caelestia-dots/caelestia](https://github.com/caelestia-dots/caelestia)
+  </div>
+
+  <div style="border:1px solid #333; border-radius:12px; padding:1rem 1.2rem; line-height:1.8;">
+    **Noctalia Shell**
+    Minimal Wayland shell built on Quickshell. Warm lavender, 53+ plugins, supports Hyprland natively.
+    [→ github.com/noctalia-dev/noctalia-shell](https://github.com/noctalia-dev/noctalia-shell)
+  </div>
+
+  <div style="border:1px solid #333; border-radius:12px; padding:1rem 1.2rem; line-height:1.8;">
+    **qswitch**
+    Switch between multiple Quickshell configs seamlessly. Handles keybinds, state, and has a panel.
+    [→ github.com/MannuVilasara/qswitch](https://github.com/MannuVilasara/qswitch)
+  </div>
+
+</div>
+
+<div style="text-align:center; color:rgba(255,255,255,0.2); margin:1.5rem 0; font-size:1.2rem; letter-spacing:0.5rem;">· · · ✦ · · ·</div>
+
+## ヽ(^o^) Final Thoughts
+
+Is this overkill? Probably. Do I need three shells? No. Am I going to add a fourth? ...maybe. (¬‿¬)
+
+The real answer is that the Hyprland + Quickshell ecosystem right now is genuinely exciting. These projects
+are all open source, actively maintained, and built by people who clearly care a lot. Using qswitch to
+run all of them felt like the most natural conclusion.
+
+If you want to try any of these, just follow the links above — each project has solid docs and active communities.
+
+---
+
+*Yes, I use Arch. You're welcome.* ٩(◕‿◕｡)۶
